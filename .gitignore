@@ -1,0 +1,4 @@
+__pycache__/
+logiciel/venv/
+logiciel/hf_cache/
+*.pyc

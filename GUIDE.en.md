@@ -56,7 +56,7 @@ Click **＋ Tank** in the tank bar.
 |---|---|
 | **Name** | "Living-room aquarium", "Koi pond"… |
 | **Type** | *Aquarium* (side view), *Pond* (top view, predators watched), *Breeding tank* |
-| **Camera** | webcam, open window 🪟 (EZVIZ Studio, Mercusys…), video file 🎞 or an `rtsp://…` stream |
+| **Camera** | webcam 📷 (a preview of each webcam: click the right one), open window 🪟 (EZVIZ Studio, Mercusys…), video file 🎞 or an `rtsp://…` stream |
 | **Fish in the tank** | the exact number, if you know it. Left empty, Frétille learns the usual number |
 | **Recommended temperature** | the range used by the water log |
 
@@ -265,5 +265,6 @@ Stream the "Frétille — live" window with OBS.
 | Not every fish is counted | crop to the tank, avoid reflections, move the camera closer |
 | Too many "fish not seen" | enter the exact number of fish in *This tank…*; a fish that often hides skews the count |
 | A fish is mistaken for another | in its record, *Photos* tab, remove the wrong learned views |
+| A USB webcam gives no picture | in *This tank…*, click **📷** and pick it from its preview: its number is not always the one you expect. Close other programs using it (Camera, Teams, OBS) |
 | The phone page won't open | same Wi-Fi as the PC? Python allowed on private networks? |
 | Asian characters show as squares | Windows needs its language fonts (Settings → Time & language → Language → add the language) |

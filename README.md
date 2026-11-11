@@ -139,7 +139,7 @@ cd logiciel
 venv\Scripts\python tests\test_regles.py
 ```
 
-- Tests: `tests\test_regles.py`, `test_moteur.py`, `test_web.py`, `test_revue.py`. They are plain scripts that print OK lines.
+- Tests: `tests\test_regles.py`, `test_moteur.py`, `test_web.py`, `test_revue.py`, `test_webcam.py`. They are plain scripts that print OK lines.
 - Translations: every visible text goes through `i18n.t("French text")`. `tests\cles_i18n.py` checks that all 12 catalogues are complete.
 - Installer: `installateur\fretille.iss` (Inno Setup 6) and `installateur\installer.ps1`.
 

@@ -43,7 +43,7 @@ Cliquez **＋ Bac** dans la barre des bacs.
 |---|---|
 | **Nom** | « Aquarium salon », « Bassin des koï »… |
 | **Genre** | *Aquarium* (vu de côté), *Bassin* (vu de dessus, prédateurs surveillés), *Bac d'élevage* |
-| **Caméra** | webcam, fenêtre ouverte 🪟 (EZVIZ Studio, Mercusys…), vidéo 🎞 ou flux `rtsp://…` |
+| **Caméra** | webcam 📷 (un aperçu de chaque webcam : cliquez sur la bonne), fenêtre ouverte 🪟 (EZVIZ Studio, Mercusys…), vidéo 🎞 ou flux `rtsp://…` |
 | **Poissons dans le bac** | le nombre exact, si vous le connaissez. Laissé vide, Frétille apprend le nombre habituel |
 | **Température conseillée** | la plage utilisée par le carnet de l'eau |
 
@@ -252,4 +252,5 @@ Diffusez la fenêtre « Frétille — en direct » avec OBS.
 | Les poissons ne sont pas tous comptés | recadrez sur le bac, évitez les reflets, rapprochez la caméra |
 | Trop de « poissons non vus » | indiquez le nombre exact de poissons dans *Ce bac…* ; un poisson qui se cache souvent fausse le compte |
 | Un poisson est confondu avec un autre | dans sa fiche, onglet *Photos*, retirez les mauvaises vues apprises |
+| Une webcam USB ne donne pas d'image | dans *Ce bac…*, cliquez **📷** et choisissez-la sur son aperçu : son numéro n'est pas toujours celui qu'on croit. Fermez les autres programmes qui l'utilisent (Caméra, Teams, OBS) |
 | La page du téléphone ne s'ouvre pas | même Wi-Fi que le PC ? Python autorisé sur les réseaux privés ? |

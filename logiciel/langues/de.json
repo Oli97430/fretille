@@ -103,7 +103,6 @@
  "Genre": "Typ",
  "Bassin : prédateurs surveillés, vue de dessus": "Teich: Räuber überwacht, Ansicht von oben",
  "Caméra": "Kamera",
- "webcam, fenêtre ouverte (🪟), vidéo (🎞) ou rtsp://…": "Webcam, offenes Fenster (🪟), Video (🎞) oder rtsp://…",
  "Poissons dans le bac": "Fische im Becken",
  "laisser vide : Frétille apprend le nombre habituel": "leer lassen: Frétille lernt die übliche Anzahl",
  "Température conseillée": "Empfohlene Temperatur",
@@ -506,5 +505,10 @@
  "bac inconnu": "unbekanntes Becken",
  "photo illisible": "Foto unlesbar",
  "date illisible": "Datum unlesbar",
- "{jour}/{mois}": "{jour}.{mois}."
+ "{jour}/{mois}": "{jour}.{mois}.",
+ "webcam (📷), fenêtre ouverte (🪟), vidéo (🎞) ou rtsp://…": "Webcam (📷), offenes Fenster (🪟), Video (🎞) oder rtsp://…",
+ "Choisir une webcam": "Webcam auswählen",
+ "Recherche des webcams… (jusqu'à 30 secondes)": "Webcams werden gesucht… (bis zu 30 Sekunden)",
+ "Cliquez sur l'image de la bonne caméra.": "Klicken Sie auf das Bild der richtigen Kamera.",
+ "Aucune webcam ne donne d'image. Vérifiez qu'elle est branchée et qu'aucun autre programme ne l'utilise (Caméra, Teams, OBS…).": "Keine Webcam liefert ein Bild. Prüfen Sie, ob sie angeschlossen ist und kein anderes Programm sie verwendet (Kamera, Teams, OBS…)."
 }

@@ -103,7 +103,6 @@
  "Genre": "Type",
  "Bassin : prédateurs surveillés, vue de dessus": "Pond: predators watched, top view",
  "Caméra": "Camera",
- "webcam, fenêtre ouverte (🪟), vidéo (🎞) ou rtsp://…": "webcam, open window (🪟), video (🎞) or rtsp://…",
  "Poissons dans le bac": "Fish in the tank",
  "laisser vide : Frétille apprend le nombre habituel": "leave empty: Frétille learns the usual number",
  "Température conseillée": "Recommended temperature",
@@ -506,5 +505,10 @@
  "bac inconnu": "unknown tank",
  "photo illisible": "unreadable photo",
  "date illisible": "unreadable date",
- "{jour}/{mois}": "{jour}/{mois}"
+ "{jour}/{mois}": "{jour}/{mois}",
+ "webcam (📷), fenêtre ouverte (🪟), vidéo (🎞) ou rtsp://…": "webcam (📷), open window (🪟), video (🎞) or rtsp://…",
+ "Choisir une webcam": "Choose a webcam",
+ "Recherche des webcams… (jusqu'à 30 secondes)": "Looking for webcams… (up to 30 seconds)",
+ "Cliquez sur l'image de la bonne caméra.": "Click the picture from the right camera.",
+ "Aucune webcam ne donne d'image. Vérifiez qu'elle est branchée et qu'aucun autre programme ne l'utilise (Caméra, Teams, OBS…).": "No webcam gives a picture. Check that it is plugged in and that no other program is using it (Camera, Teams, OBS…)."
 }

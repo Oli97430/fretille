@@ -103,7 +103,6 @@
  "Genre": "类型",
  "Bassin : prédateurs surveillés, vue de dessus": "池塘：监控天敌，俯视画面",
  "Caméra": "摄像头",
- "webcam, fenêtre ouverte (🪟), vidéo (🎞) ou rtsp://…": "摄像头、打开的窗口 (🪟)、视频 (🎞) 或 rtsp://…",
  "Poissons dans le bac": "缸内鱼数",
  "laisser vide : Frétille apprend le nombre habituel": "留空：Frétille 会学习通常的数量",
  "Température conseillée": "建议温度",
@@ -506,5 +505,10 @@
  "bac inconnu": "未知鱼缸",
  "photo illisible": "无法读取照片",
  "date illisible": "无法识别日期",
- "{jour}/{mois}": "{mois}/{jour}"
+ "{jour}/{mois}": "{mois}/{jour}",
+ "webcam (📷), fenêtre ouverte (🪟), vidéo (🎞) ou rtsp://…": "摄像头 (📷)、打开的窗口 (🪟)、视频 (🎞) 或 rtsp://…",
+ "Choisir une webcam": "选择摄像头",
+ "Recherche des webcams… (jusqu'à 30 secondes)": "正在查找摄像头…（最多 30 秒）",
+ "Cliquez sur l'image de la bonne caméra.": "点击正确摄像头的画面。",
+ "Aucune webcam ne donne d'image. Vérifiez qu'elle est branchée et qu'aucun autre programme ne l'utilise (Caméra, Teams, OBS…).": "没有摄像头给出画面。请检查它是否已连接，且没有被其他程序占用（相机、Teams、OBS…）。"
 }

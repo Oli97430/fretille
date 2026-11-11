@@ -103,7 +103,6 @@
  "Genre": "Tipo",
  "Bassin : prédateurs surveillés, vue de dessus": "Laghetto: predatori sorvegliati, vista dall'alto",
  "Caméra": "Telecamera",
- "webcam, fenêtre ouverte (🪟), vidéo (🎞) ou rtsp://…": "webcam, finestra aperta (🪟), video (🎞) o rtsp://…",
  "Poissons dans le bac": "Pesci nella vasca",
  "laisser vide : Frétille apprend le nombre habituel": "lasciare vuoto: Frétille impara il numero abituale",
  "Température conseillée": "Temperatura consigliata",
@@ -506,5 +505,10 @@
  "bac inconnu": "vasca sconosciuta",
  "photo illisible": "foto illeggibile",
  "date illisible": "data illeggibile",
- "{jour}/{mois}": "{jour}/{mois}"
+ "{jour}/{mois}": "{jour}/{mois}",
+ "webcam (📷), fenêtre ouverte (🪟), vidéo (🎞) ou rtsp://…": "webcam (📷), finestra aperta (🪟), video (🎞) o rtsp://…",
+ "Choisir une webcam": "Scegli una webcam",
+ "Recherche des webcams… (jusqu'à 30 secondes)": "Ricerca delle webcam… (fino a 30 secondi)",
+ "Cliquez sur l'image de la bonne caméra.": "Fai clic sull'immagine della telecamera giusta.",
+ "Aucune webcam ne donne d'image. Vérifiez qu'elle est branchée et qu'aucun autre programme ne l'utilise (Caméra, Teams, OBS…).": "Nessuna webcam fornisce un'immagine. Controlla che sia collegata e che nessun altro programma la usi (Fotocamera, Teams, OBS…)."
 }

@@ -103,7 +103,6 @@
  "Genre": "種類",
  "Bassin : prédateurs surveillés, vue de dessus": "池：天敵を監視、上からの映像",
  "Caméra": "カメラ",
- "webcam, fenêtre ouverte (🪟), vidéo (🎞) ou rtsp://…": "Web カメラ、開いているウィンドウ (🪟)、動画 (🎞)、rtsp://…",
  "Poissons dans le bac": "水槽の魚の数",
  "laisser vide : Frétille apprend le nombre habituel": "空欄のままにすると、Frétille がいつもの数を学習します",
  "Température conseillée": "推奨水温",
@@ -506,5 +505,10 @@
  "bac inconnu": "不明な水槽",
  "photo illisible": "写真を読み取れません",
  "date illisible": "日付を読み取れません",
- "{jour}/{mois}": "{mois}/{jour}"
+ "{jour}/{mois}": "{mois}/{jour}",
+ "webcam (📷), fenêtre ouverte (🪟), vidéo (🎞) ou rtsp://…": "Web カメラ (📷)、開いているウィンドウ (🪟)、動画 (🎞)、rtsp://…",
+ "Choisir une webcam": "ウェブカメラを選ぶ",
+ "Recherche des webcams… (jusqu'à 30 secondes)": "ウェブカメラを探しています…（最大30秒）",
+ "Cliquez sur l'image de la bonne caméra.": "正しいカメラの映像をクリックしてください。",
+ "Aucune webcam ne donne d'image. Vérifiez qu'elle est branchée et qu'aucun autre programme ne l'utilise (Caméra, Teams, OBS…).": "映像の出るウェブカメラがありません。接続されているか、他のアプリ（カメラ、Teams、OBS…）が使っていないか確認してください。"
 }

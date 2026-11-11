@@ -7,7 +7,7 @@
 ; téléchargés). Les données de l'utilisateur (Vidéos\Fretille, réglages) ne sont jamais touchées,
 ; ni à la mise à jour ni à la désinstallation.
 
-#define Version "1.0.1"
+#define Version "1.0.2"
 
 [Setup]
 AppId={{6F1B6C5E-2B0A-4F3E-9C55-FRETILLE0001}

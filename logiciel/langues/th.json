@@ -103,7 +103,6 @@
  "Genre": "ประเภท",
  "Bassin : prédateurs surveillés, vue de dessus": "บ่อ: เฝ้าระวังสัตว์นักล่า มุมมองจากด้านบน",
  "Caméra": "กล้อง",
- "webcam, fenêtre ouverte (🪟), vidéo (🎞) ou rtsp://…": "เว็บแคม หน้าต่างที่เปิดอยู่ (🪟) วิดีโอ (🎞) หรือ rtsp://…",
  "Poissons dans le bac": "จำนวนปลาในตู้",
  "laisser vide : Frétille apprend le nombre habituel": "เว้นว่างไว้: Frétille จะเรียนรู้จำนวนปกติเอง",
  "Température conseillée": "อุณหภูมิที่แนะนำ",
@@ -506,5 +505,10 @@
  "bac inconnu": "ไม่รู้จักตู้นี้",
  "photo illisible": "อ่านรูปภาพไม่ได้",
  "date illisible": "อ่านวันที่ไม่ได้",
- "{jour}/{mois}": "{jour}/{mois}"
+ "{jour}/{mois}": "{jour}/{mois}",
+ "webcam (📷), fenêtre ouverte (🪟), vidéo (🎞) ou rtsp://…": "เว็บแคม (📷) หน้าต่างที่เปิดอยู่ (🪟) วิดีโอ (🎞) หรือ rtsp://…",
+ "Choisir une webcam": "เลือกเว็บแคม",
+ "Recherche des webcams… (jusqu'à 30 secondes)": "กำลังค้นหาเว็บแคม… (ไม่เกิน 30 วินาที)",
+ "Cliquez sur l'image de la bonne caméra.": "คลิกที่ภาพของกล้องที่ต้องการ",
+ "Aucune webcam ne donne d'image. Vérifiez qu'elle est branchée et qu'aucun autre programme ne l'utilise (Caméra, Teams, OBS…).": "ไม่มีเว็บแคมที่ให้ภาพ ตรวจสอบว่าเสียบอยู่และไม่มีโปรแกรมอื่นใช้งานอยู่ (กล้อง, Teams, OBS…)"
 }

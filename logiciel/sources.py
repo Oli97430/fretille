@@ -586,10 +586,95 @@ class CaptureFenetre:
 # ------------------------------------------------------------------
 #  Ouverture
 # ------------------------------------------------------------------
-def ouvrir_source(source, largeur=1920, hauteur=1080):
-    """Ouvre la source et lit une première image : (capture, image) ou (None, None).
-    Webcam : 1080p en MJPG (par défaut OpenCV reste en 640x480, trop peu pour les écailles) ;
-    Media Foundation d'abord, puis DirectShow (certaines webcams ne renvoient rien sous MSMF)."""
+# Essais successifs pour une webcam, du meilleur au plus sûr. Une webcam USB refuse souvent le
+# 1080p ou le MJPG : elle s'ouvre alors, mais ne rend aucune image. Chaque essai rouvre la
+# caméra, car un format refusé peut la laisser bloquée.
+#   (API, compression, largeur, hauteur) ; None = réglage d'origine de la caméra
+ESSAIS_WEBCAM = [
+    (cv2.CAP_MSMF, "MJPG", 1920, 1080),
+    (cv2.CAP_MSMF, "MJPG", 1280, 720),
+    (cv2.CAP_DSHOW, "MJPG", 1920, 1080),
+    (cv2.CAP_DSHOW, "MJPG", 1280, 720),
+    (cv2.CAP_DSHOW, None, 1280, 720),
+    (cv2.CAP_MSMF, None, None, None),
+    (cv2.CAP_DSHOW, None, None, None),
+    (cv2.CAP_ANY, None, None, None),
+]
+IMAGES_D_ESSAI = 12          # une webcam rend parfois quelques images vides ou noires au démarrage
+NOIR = 3.0                   # luminosité moyenne sous laquelle une image est « noire », sur 255
+MAX_WEBCAMS = 6
+_essai_retenu = {}           # numéro de webcam -> essai qui a marché : les reconnexions vont droit au but
+
+
+def _essayer_webcam(numero, essai, ouvrir):
+    """(capture, image, noire) pour un essai, ou (None, None, True)."""
+    api, compression, largeur, hauteur = essai
+    try:
+        camera = ouvrir(numero, api)
+    except Exception:                   # noqa: BLE001 - API absente de cette version d'OpenCV
+        return None, None, True
+    if not camera.isOpened():
+        camera.release()
+        return None, None, True
+    if compression:
+        camera.set(cv2.CAP_PROP_FOURCC, cv2.VideoWriter_fourcc(*compression))
+    if largeur:
+        camera.set(cv2.CAP_PROP_FRAME_WIDTH, largeur)
+        camera.set(cv2.CAP_PROP_FRAME_HEIGHT, hauteur)
+    derniere = None
+    for _i in range(IMAGES_D_ESSAI):
+        ok, image = camera.read()
+        if ok and image is not None and image.size:
+            derniere = image
+            if image.mean() >= NOIR:
+                return camera, image, False
+    if derniere is not None:
+        return camera, derniere, True
+    camera.release()
+    return None, None, True
+
+
+def ouvrir_webcam(numero, ouvrir=cv2.VideoCapture):
+    """Ouvre la webcam `numero` avec le premier essai qui rend une image : (capture, image)
+    ou (None, None). Une image noire n'est acceptée que si aucun essai ne fait mieux (cache
+    de la webcam fermé, pièce dans le noir)."""
+    essais = list(ESSAIS_WEBCAM)
+    if numero in _essai_retenu:
+        essais.remove(_essai_retenu[numero])
+        essais.insert(0, _essai_retenu[numero])
+    noir = None
+    for essai in essais:
+        camera, image, noire = _essayer_webcam(numero, essai, ouvrir)
+        if camera is None:
+            continue
+        if not noire:
+            _essai_retenu[numero] = essai
+            return camera, image
+        camera.release()
+        noir = noir or essai
+    if noir is not None:
+        camera, image, _noire = _essayer_webcam(numero, noir, ouvrir)
+        if camera is not None:
+            _essai_retenu[numero] = noir
+            return camera, image
+    _essai_retenu.pop(numero, None)
+    return None, None
+
+
+def lister_webcams(maximum=MAX_WEBCAMS, ouvrir=cv2.VideoCapture):
+    """[(numéro, image)] des webcams qui rendent une image. Sert à choisir sur aperçu : les
+    numéros ne disent pas laquelle est la webcam du portable et laquelle est la webcam USB."""
+    trouvees = []
+    for numero in range(maximum):
+        camera, image = ouvrir_webcam(numero, ouvrir)
+        if camera is not None:
+            camera.release()
+            trouvees.append((numero, image))
+    return trouvees
+
+
+def ouvrir_source(source):
+    """Ouvre la source et lit une première image : (capture, image) ou (None, None)."""
     if est_fenetre(source):
         camera = CaptureFenetre(source[len(PREFIXE_FENETRE):])
         if not camera.isOpened():
@@ -599,18 +684,7 @@ def ouvrir_source(source, largeur=1920, hauteur=1080):
         adresse = resoudre_flux(source) if est_flux(source) else source
         camera = cv2.VideoCapture(adresse, cv2.CAP_FFMPEG) if est_flux(source) else cv2.VideoCapture(adresse)
     else:
-        for api in (cv2.CAP_MSMF, cv2.CAP_DSHOW):
-            camera = cv2.VideoCapture(source, api)
-            if camera.isOpened():
-                camera.set(cv2.CAP_PROP_FOURCC, cv2.VideoWriter_fourcc(*"MJPG"))
-                camera.set(cv2.CAP_PROP_FRAME_WIDTH, largeur)
-                camera.set(cv2.CAP_PROP_FRAME_HEIGHT, hauteur)
-                for _i in range(8):     # certaines webcams renvoient quelques images vides au démarrage
-                    ok, image = camera.read()
-                    if ok:
-                        return camera, image
-            camera.release()
-        return None, None
+        return ouvrir_webcam(source)
     ok, image = camera.read()
     if ok:
         return camera, image

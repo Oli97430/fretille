@@ -103,7 +103,6 @@
  "Genre": "Type",
  "Bassin : prédateurs surveillés, vue de dessus": "Vijver: roofdieren bewaakt, bovenaanzicht",
  "Caméra": "Camera",
- "webcam, fenêtre ouverte (🪟), vidéo (🎞) ou rtsp://…": "webcam, open venster (🪟), video (🎞) of rtsp://…",
  "Poissons dans le bac": "Vissen in de bak",
  "laisser vide : Frétille apprend le nombre habituel": "leeg laten: Frétille leert het gebruikelijke aantal",
  "Température conseillée": "Aanbevolen temperatuur",
@@ -506,5 +505,10 @@
  "bac inconnu": "onbekende bak",
  "photo illisible": "foto onleesbaar",
  "date illisible": "datum onleesbaar",
- "{jour}/{mois}": "{jour}-{mois}"
+ "{jour}/{mois}": "{jour}-{mois}",
+ "webcam (📷), fenêtre ouverte (🪟), vidéo (🎞) ou rtsp://…": "webcam (📷), open venster (🪟), video (🎞) of rtsp://…",
+ "Choisir une webcam": "Kies een webcam",
+ "Recherche des webcams… (jusqu'à 30 secondes)": "Webcams zoeken… (tot 30 seconden)",
+ "Cliquez sur l'image de la bonne caméra.": "Klik op het beeld van de juiste camera.",
+ "Aucune webcam ne donne d'image. Vérifiez qu'elle est branchée et qu'aucun autre programme ne l'utilise (Caméra, Teams, OBS…).": "Geen enkele webcam geeft beeld. Controleer of ze is aangesloten en of geen ander programma ze gebruikt (Camera, Teams, OBS…)."
 }

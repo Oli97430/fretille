@@ -103,7 +103,6 @@
  "Genre": "Tipo",
  "Bassin : prédateurs surveillés, vue de dessus": "Estanque: depredadores vigilados, vista desde arriba",
  "Caméra": "Cámara",
- "webcam, fenêtre ouverte (🪟), vidéo (🎞) ou rtsp://…": "webcam, ventana abierta (🪟), vídeo (🎞) o rtsp://…",
  "Poissons dans le bac": "Peces en el acuario",
  "laisser vide : Frétille apprend le nombre habituel": "dejar vacío: Frétille aprende el número habitual",
  "Température conseillée": "Temperatura recomendada",
@@ -506,5 +505,10 @@
  "bac inconnu": "acuario desconocido",
  "photo illisible": "foto ilegible",
  "date illisible": "fecha ilegible",
- "{jour}/{mois}": "{jour}/{mois}"
+ "{jour}/{mois}": "{jour}/{mois}",
+ "webcam (📷), fenêtre ouverte (🪟), vidéo (🎞) ou rtsp://…": "webcam (📷), ventana abierta (🪟), vídeo (🎞) o rtsp://…",
+ "Choisir une webcam": "Elegir una webcam",
+ "Recherche des webcams… (jusqu'à 30 secondes)": "Buscando webcams… (hasta 30 segundos)",
+ "Cliquez sur l'image de la bonne caméra.": "Haga clic en la imagen de la cámara correcta.",
+ "Aucune webcam ne donne d'image. Vérifiez qu'elle est branchée et qu'aucun autre programme ne l'utilise (Caméra, Teams, OBS…).": "Ninguna webcam da imagen. Compruebe que está conectada y que ningún otro programa la usa (Cámara, Teams, OBS…)."
 }

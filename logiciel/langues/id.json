@@ -103,7 +103,6 @@
  "Genre": "Jenis",
  "Bassin : prédateurs surveillés, vue de dessus": "Kolam: pemangsa dipantau, tampak atas",
  "Caméra": "Kamera",
- "webcam, fenêtre ouverte (🪟), vidéo (🎞) ou rtsp://…": "webcam, jendela terbuka (🪟), video (🎞) atau rtsp://…",
  "Poissons dans le bac": "Ikan di tangki",
  "laisser vide : Frétille apprend le nombre habituel": "kosongkan: Frétille mempelajari jumlah biasanya",
  "Température conseillée": "Suhu yang disarankan",
@@ -506,5 +505,10 @@
  "bac inconnu": "tangki tidak dikenal",
  "photo illisible": "foto tak terbaca",
  "date illisible": "tanggal tak terbaca",
- "{jour}/{mois}": "{jour}/{mois}"
+ "{jour}/{mois}": "{jour}/{mois}",
+ "webcam (📷), fenêtre ouverte (🪟), vidéo (🎞) ou rtsp://…": "webcam (📷), jendela terbuka (🪟), video (🎞) atau rtsp://…",
+ "Choisir une webcam": "Pilih webcam",
+ "Recherche des webcams… (jusqu'à 30 secondes)": "Mencari webcam… (hingga 30 detik)",
+ "Cliquez sur l'image de la bonne caméra.": "Klik gambar dari kamera yang benar.",
+ "Aucune webcam ne donne d'image. Vérifiez qu'elle est branchée et qu'aucun autre programme ne l'utilise (Caméra, Teams, OBS…).": "Tidak ada webcam yang memberi gambar. Periksa apakah sudah terpasang dan tidak dipakai program lain (Kamera, Teams, OBS…)."
 }

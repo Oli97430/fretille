@@ -103,7 +103,6 @@
  "Genre": "Loại",
  "Bassin : prédateurs surveillés, vue de dessus": "Hồ: giám sát thú săn mồi, nhìn từ trên xuống",
  "Caméra": "Camera",
- "webcam, fenêtre ouverte (🪟), vidéo (🎞) ou rtsp://…": "webcam, cửa sổ đang mở (🪟), video (🎞) hoặc rtsp://…",
  "Poissons dans le bac": "Số cá trong bể",
  "laisser vide : Frétille apprend le nombre habituel": "để trống: Frétille sẽ tự học số lượng thường gặp",
  "Température conseillée": "Nhiệt độ khuyến nghị",
@@ -506,5 +505,10 @@
  "bac inconnu": "bể không rõ",
  "photo illisible": "không đọc được ảnh",
  "date illisible": "không đọc được ngày",
- "{jour}/{mois}": "{jour}/{mois}"
+ "{jour}/{mois}": "{jour}/{mois}",
+ "webcam (📷), fenêtre ouverte (🪟), vidéo (🎞) ou rtsp://…": "webcam (📷), cửa sổ đang mở (🪟), video (🎞) hoặc rtsp://…",
+ "Choisir une webcam": "Chọn webcam",
+ "Recherche des webcams… (jusqu'à 30 secondes)": "Đang tìm webcam… (tối đa 30 giây)",
+ "Cliquez sur l'image de la bonne caméra.": "Bấm vào hình của đúng camera.",
+ "Aucune webcam ne donne d'image. Vérifiez qu'elle est branchée et qu'aucun autre programme ne l'utilise (Caméra, Teams, OBS…).": "Không webcam nào cho hình ảnh. Hãy kiểm tra xem nó đã được cắm và không có chương trình nào khác đang dùng (Camera, Teams, OBS…)."
 }

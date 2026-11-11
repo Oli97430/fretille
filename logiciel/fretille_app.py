@@ -579,6 +579,8 @@ class App:
                     else:
                         self._fenetre_outil(bac, image, outil, apres, parent)
                 self.lbl_etat.configure(text=t("Prêt"))
+            elif genre == "webcams":
+                self._montrer_webcams(*contenu)
             elif genre == "bilans":
                 self.bilans.update(contenu)
                 self._maj_barre_bacs()
@@ -1475,11 +1477,12 @@ class App:
               t("Bassin : prédateurs surveillés, vue de dessus"))
         cadre_source = tk.Frame(f, bg=CARTE)
         ttk.Combobox(cadre_source, textvariable=v_source, values=[libelle_source(i) for i in range(4)], width=34).pack(side="left")
+        ttk.Button(cadre_source, text="📷", width=3, command=lambda: self._choisir_webcam(v_source, f)).pack(side="left", padx=(4, 0))
         ttk.Button(cadre_source, text="🪟", width=3, command=lambda: self._choisir_fenetre(v_source, f)).pack(side="left", padx=(4, 0))
         ttk.Button(cadre_source, text="🎞", width=3,
                    command=lambda: v_source.set(filedialog.askopenfilename(parent=f, filetypes=[(t("Vidéos"), "*.mp4 *.avi *.mkv *.mov")])
                                                 or v_source.get())).pack(side="left", padx=(4, 0))
-        ligne(2, t("Caméra"), cadre_source, t("webcam, fenêtre ouverte (🪟), vidéo (🎞) ou rtsp://…"))
+        ligne(2, t("Caméra"), cadre_source, t("webcam (📷), fenêtre ouverte (🪟), vidéo (🎞) ou rtsp://…"))
         ligne(3, t("Poissons dans le bac"), ttk.Entry(f, textvariable=v_nombre, width=8),
               t("laisser vide : Frétille apprend le nombre habituel"))
         temp = tk.Frame(f, bg=CARTE)
@@ -1583,6 +1586,56 @@ class App:
 
         liste.bind("<Double-1>", valider)
         ttk.Button(f, text=t("Choisir"), style="Vert.TButton", command=valider).pack(anchor="e", pady=(10, 0))
+
+    def _choisir_webcam(self, variable, parent):
+        """Essaie chaque webcam (dans un fil) et montre une image de chacune : on clique sur la
+        bonne. Les numéros ne disent pas laquelle est celle du portable et laquelle est en USB."""
+        f = tk.Toplevel(parent, bg=CARTE, padx=16, pady=14)
+        f.title(t("Choisir une webcam"))
+        f.transient(parent)
+        ttk.Label(f, text=t("Recherche des webcams… (jusqu'à 30 secondes)"), style="Carte.TLabel").pack(padx=40, pady=30)
+
+        def travail():
+            try:
+                trouvees = sources.lister_webcams()
+            except Exception:                      # noqa: BLE001 - pilote de caméra capricieux
+                trouvees = []
+            self.messages.put(("webcams", (f, variable, trouvees)))
+        threading.Thread(target=travail, daemon=True).start()
+
+    def _montrer_webcams(self, f, variable, trouvees):
+        if not f.winfo_exists():
+            return
+        for enfant in f.winfo_children():
+            enfant.destroy()
+        if not trouvees:
+            ttk.Label(f, text=t("Aucune webcam ne donne d'image. Vérifiez qu'elle est branchée et qu'aucun autre "
+                                "programme ne l'utilise (Caméra, Teams, OBS…)."), style="Carte.TLabel", wraplength=420,
+                      justify="left").pack(padx=10, pady=20)
+            return
+        ttk.Label(f, text=t("Cliquez sur l'image de la bonne caméra."), style="Discret.TLabel").pack(anchor="w", pady=(0, 8))
+        rangee = tk.Frame(f, bg=CARTE)
+        rangee.pack()
+        f.vignettes = []
+
+        def choisir(numero):
+            variable.set(libelle_source(numero))
+            f.destroy()
+
+        for rang, (numero, image) in enumerate(trouvees):
+            img = Image.fromarray(cv2.cvtColor(image, cv2.COLOR_BGR2RGB))
+            img.thumbnail((300, 200))
+            vignette = ImageTk.PhotoImage(img)
+            f.vignettes.append(vignette)
+            case = tk.Frame(rangee, bg=CARTE)
+            case.grid(row=rang // 3 * 2, column=rang % 3, padx=6, pady=6)
+            bouton = tk.Label(case, image=vignette, bg=CARTE, cursor="hand2")
+            bouton.pack()
+            legende = tk.Label(case, text=f"{libelle_source(numero)}  ·  {image.shape[1]}×{image.shape[0]}", bg=CARTE, fg=TEXTE,
+                               font=PT(10), cursor="hand2")
+            legende.pack()
+            for w in (bouton, legende):
+                w.bind("<Button-1>", lambda _e, n=numero: choisir(n))
 
     def _outil_image(self, bac, source, outil, apres, parent):
         """Lit une image de la caméra du bac (dans un fil), puis ouvre l'outil sur elle."""

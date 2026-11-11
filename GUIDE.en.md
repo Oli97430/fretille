@@ -23,9 +23,12 @@
 
 ## 1. Install
 
-1. Install **Python 3.11** from python.org, ticking *Add python.exe to PATH*.
-2. Double-click **`logiciel\installer.bat`**. It downloads about 3 GB, once. An NVIDIA graphics card is used if present.
-3. Run **`logiciel\Fretille.bat`**.
+1. Download **`Fretille-Setup.exe`** from the [releases page](https://github.com/Oli97430/fretille/releases/latest).
+2. Double-click it. If Windows shows "Windows protected your PC", click *More info*, then *Run anyway*.
+3. Let the black window work: it installs Python 3.11 if missing, then downloads about 3 GB (5 to 30 minutes). An NVIDIA graphics card is used if present.
+4. Start **Frétille** from the desktop shortcut.
+
+Running `Fretille-Setup.exe` again repairs or updates the installation without touching your data. To uninstall: Windows Settings → Apps → Frétille.
 
 On first launch the vision models download, which takes a few minutes. "Models ready", top right, means they are loaded.
 
